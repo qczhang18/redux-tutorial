@@ -83,7 +83,7 @@ var thunkMiddleware = function ({ dispatch, getState }) {
 
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 
-const finalCreateStore = applyMiddleware(thunkMiddleware)(createStore)
+const finalCreateStore = applyMiddleware(logMiddleware)(createStore)
 // For multiple middlewares, write: applyMiddleware(middleware1, middleware2, ...)(createStore)
 
 var reducer = combineReducers({
